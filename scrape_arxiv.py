@@ -1,6 +1,9 @@
 import urllib.request
 from bs4 import BeautifulSoup
 import pickle
+import sys
+
+sys.setrecursionlimit(15000)
 
 def pull_data(url):
 	""" Pull data """
@@ -67,3 +70,5 @@ if __name__ == '__main__':
 		pickle.dump(res, open( cat + ".p", "wb" ) )
 
 		print('done')
+
+sys.setrecursionlimit(1000)
