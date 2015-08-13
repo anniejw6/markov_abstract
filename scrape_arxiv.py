@@ -54,8 +54,6 @@ if __name__ == '__main__':
 	if(interval > records):
 		interval = records
 
-	res_all = {}
-
 	for cat in math_cat:
 
 		print(cat)
@@ -65,10 +63,7 @@ if __name__ == '__main__':
 			print(cat + str(i))
 			res = res + run(cat, i, interval)
 
-		# Load into final
-		res_all[cat] = res
+		# Save
+		pickle.dump(res, open( cat + ".p", "wb" ) )
 
 		print('done')
-
-	# Save
-	pickle.dump(res_all, open( "all_results.p", "wb" ) )
