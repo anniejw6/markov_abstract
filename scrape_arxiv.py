@@ -17,10 +17,10 @@ def _grab_entry(entry):
 	return {'id' : entry.id.string,
 	'date_updated' : entry.updated.string,
 	'date_published' : entry.published.string,
-	'title' : entry.title.string.replace('\n','').strip(),
-	'summary' : entry.summary.string.replace('\n','').strip(),
+	'title' : entry.title.string.replace('\n',' ').strip(),
+	'summary' : entry.summary.string.replace('\n',' ').strip(),
 	'author' : [x.contents[1].string for x in entry.find_all('author')],
-	'category' : entry.category['term']}
+	'category' : [x['term'] for x in entry.find_all('category')]}
 	
 
 def parse(html):
