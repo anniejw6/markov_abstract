@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pickle
 import sys
 
-sys.setrecursionlimit(15000)
+sys.setrecursionlimit(150000)
 
 def pull_data(url):
 	""" Pull data """
@@ -44,15 +44,20 @@ def run(category, start, num_res):
 
 if __name__ == '__main__':
 
-	math_cat = ['math.AG', 'math.AT', 'math.AP', 'math.CT', 'math.CA',
-'math.CO', 'math.AC', 'math.CV', 'math.DG', 'math.DS', 'math.FA',
-'math.GM', 'math.GN', 'math.GT', 'math.GR', 'math.HO', 'math.IT',
-'math.IT', 'math.KT', 'math.LO', 'math.MP', 'math.MG', 'math.NT',
-'math.NA', 'math.OA', 'math.OC', 'math.PR', 'math.QA', 'math.RT',
-'math.RA', 'math.SP', 'math.ST', 'math.ST', 'math.SG']
+# 	math_cat = ['math.AG', 'math.AT', 'math.AP', 'math.CT', 'math.CA',
+# 'math.CO', 'math.AC', 'math.CV', 'math.DG', 'math.DS', 'math.FA',
+# 'math.GM', 'math.GN', 'math.GT', 'math.GR', 'math.HO', 'math.IT',
+# 'math.IT', 'math.KT', 'math.LO', 'math.MP', 'math.MG', 'math.NT',
+# 'math.NA', 'math.OA', 'math.OC', 'math.PR', 'math.QA', 'math.RT',
+# 'math.RA', 'math.SP', 'math.ST', 'math.ST', 'math.SG']
 
-	records = 10000
-	interval = 1000
+	math_cat = ['math.AG']
+
+	# records = 10000
+	# interval = 1000
+
+	records = 5000
+	interval = 100
 
 	if(interval > records):
 		interval = records
