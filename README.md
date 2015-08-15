@@ -6,4 +6,4 @@ python markov_text/markov.py parse some_guide 3 file.txt
 python markov_text/markov.py gen some_guide 5
 ```
 
-![sample output](https://www.dropbox.com/s/u87sdj5x0lxv6c6/fake_math.png)
+![sample output](http://s8.postimg.org/yncxo67kl/fake_math.png)
