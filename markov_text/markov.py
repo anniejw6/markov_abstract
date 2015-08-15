@@ -30,8 +30,10 @@ if __name__ == '__main__':
 		db = Db(sqlite3.connect(name + '.db'), Sql())
 		db.setup(depth)
 		
-		txt = codecs.open(file_name, 'r', 'utf-8').read()
-		Parser(name, db, SENTENCE_SEPARATOR, WORD_SEPARATOR).parse(txt)
+		with open(file_name) as f:
+			txt = f.readlines()
+
+		Parser(name, db).parse(txt)
 	
 	elif mode == 'gen':
 		count = int(args[3])

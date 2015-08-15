@@ -6,6 +6,7 @@ class Generator:
 		self.db   = db
 		self.rnd  = rnd
 
+
 	def _get_next_word(self, word_list):
 		candidate_words = self.db.get_word_count(word_list)
 		total_next_words = sum(candidate_words.values())
@@ -16,6 +17,7 @@ class Generator:
 			if (i <= t):
 				return w
 		assert False
+
 
 	def generate(self, word_separator):
 		depth = self.db.get_depth()
